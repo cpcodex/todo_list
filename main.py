@@ -15,14 +15,17 @@ def view_task():
     return print(todo_list)
 
 def del_task(i):
-    pass
+    return todo_list.pop(i)
 
 def library():
     pass
 
+# init list
 todo_list = ['1','2','3']
+
+# run program
 while True:    
-    print('1. Add\n2. View\n3. Remove\n')
+    print('1. Add\n2. View\n3. Remove\n4. Library\n5. Exit\n')
     option = int(input('Enter your number: '))
     
     if option == 1:
@@ -31,9 +34,9 @@ while True:
     elif option == 2:
         view_task()
     elif option == 3:
-        # inp = input(int('Which task would you like to remove?\n'))
-        # del_task(inp)
-        print('This option will remove a task.')
+        inp = int(input('Which task would you like to remove?\n'))
+        inp_index = inp - 1
+        del_task(inp_index)
     elif option == 4:
         print('This option will library a task.')
     elif option == 5:

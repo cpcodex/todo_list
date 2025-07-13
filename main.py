@@ -18,7 +18,7 @@ def seperator():
     return print('=' * 30)
 
 # init list
-todo_list = ['1','2','3']
+todo_list = []
 
 # intro
 print("To-Do List")

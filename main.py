@@ -7,7 +7,7 @@ def view_task():
     counter = 0
     for task in todo_list:
         counter += 1
-        print(counter,'.', task)
+        print(f'{counter}. {task}')
     return
 
 def del_task(i):

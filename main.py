@@ -1,52 +1,59 @@
-
 # functions
 def add_task(prompt):
-    print(("=" * 6) + "Task Added!" + ("=" * 6))   
+    print(("**" * 6) + "Task Added!" + ("**" * 6))   
     return todo_list.append(prompt)  
 
-def view_task():    
-    return print(todo_list)
+def view_task():
+    counter = 0
+    for task in todo_list:
+        counter += 1
+        print(counter,'.', task)
+    return
 
 def del_task(i):
-    print(("=" * 4) + "Task removed!" + ("=" * 4))  
+    print(("**" * 4) + "Task removed!" + ("**" * 4))  
     return todo_list.pop(i)
-
-def library():
-    pass
 
 def seperator():
     return print('=' * 30)
 
+def intro():
+    seperator()
+    print("To-Do List")
+    seperator()
+    
 # init list
-todo_list = []
+todo_list = ['Add task', 'Next task', 'Third task']
 
 # intro
-print("To-Do List")
-seperator()
-    
+intro()
+
 # run program
-while True:    
+display = True
+while display:   
     # option inputs        
-    print('1. Add\n2. View\n3. Remove\n4. Library\n5. Exit')
+    print('1. Add\n2. View\n3. Remove\n4. Exit')
     seperator()
     option = int(input('Enter your number: '))
     seperator()
-    
+
     # option handlings
     if option == 1:
-        prompt = input(str('Input the task you would like to add.\n- '))
+        prompt = str(input('Input the task you would like to add.\n- '))
         add_task(prompt)
     elif option == 2:
+        print('')
         view_task()
+        print('')
+        seperator()
     elif option == 3:
         inp = int(input('Which task would you like to remove?\n- '))
         inp_index = inp - 1
         seperator()
         del_task(inp_index)
     elif option == 4:
-        print('This option will create a library for tasks to be displayed in the terminal.')
-        seperator()
-    elif option == 5:
-        break
+        display = False
     else:
-        print('Invalid Input, Please try again.')
+        print('Invalid Input, Please try again.') 
+else:
+        print('Closing...')

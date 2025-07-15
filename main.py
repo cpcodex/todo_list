@@ -23,7 +23,7 @@ def intro():
     seperator()
     
 # init list
-todo_list = ['Add task', 'Next task', 'Third task']
+todo_list = []
 
 # intro
 intro()
